@@ -1,0 +1,21 @@
+# Security: Ignore environment variables
+.env
+
+# Runtime: Ignore Python cache
+__pycache__/
+*.pyc
+
+# Data: Ignore the Vector Database
+chroma_db/
+chroma_db
+
+# Logs: Ignore runtime logs
+logs/
+*.log
+
+
+# System: Ignore OS files
+.DS_Store
+
+# Editor: Ignore VS Code settings (optional, but good practice)
+.vscode/
