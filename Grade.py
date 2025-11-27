@@ -3,8 +3,9 @@ import pandas as pd
 from langchain_google_genai import ChatGoogleGenerativeAI
 from agent_tool import run_agent_with_refine_prompt
 
+load_dotenv()
 # Configuration
-GOOGLE_API_KEY = "AIzaSyAI5xtW-81f8A34q15YkQVczmOAIz3F8DU"
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 # Test Data Definitions
 test_dataset = [
