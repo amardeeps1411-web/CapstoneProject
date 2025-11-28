@@ -1,0 +1,21 @@
+graph TD
+    User[User Input] --> Agent{Agent Brain (Gemini 2.0)}
+    
+    subgraph "Reasoning Engine"
+        Agent -->|Needs Info?| Router
+        Router -->|Policy Question| RAG_Tool[Lookup Policy Tool]
+        Router -->|Personal Data| SQL_Tool[Check Leave Tool]
+        Router -->|IT Issue| Ticket_Tool[Create Ticket Tool]
+        
+        RAG_Tool -->|Hybrid Search| Hybrid[Ensemble: BM25 + Vector]
+        Hybrid -->Docs[Knowledge Base]
+        
+        SQL_Tool -->|Query| MockDB[(Mock Employee DB)]
+        Ticket_Tool -->|Action| TicketSystem[IT Support System]
+    end
+    
+    Docs --> Agent
+    MockDB --> Agent
+    TicketSystem --> Agent
+    
+    Agent -->|Final Answer| User

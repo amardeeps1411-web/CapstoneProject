@@ -1,8 +1,9 @@
+import os
 import time
 import pandas as pd
 from langchain_google_genai import ChatGoogleGenerativeAI
 from agent_tool import run_agent_with_refine_prompt
-
+from dotenv import load_dotenv
 load_dotenv()
 # Configuration
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -37,7 +38,7 @@ test_dataset = [
     {
         "category": "Tool_Action",
         "question": "My laptop screen is broken, please open a ticket.",
-        "ground_truth": "The agent must successfully create a support ticket. The response should contain a confirmation message and a Ticket ID starting with 'INC-'."
+        "ground_truth": "The agent must ask for permission to  create a support ticket. Upon approval he should create a ticket."
     }
 ]
 

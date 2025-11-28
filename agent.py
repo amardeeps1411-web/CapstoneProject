@@ -16,6 +16,7 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 from logger import setup_logger
+from dotenv import load_dotenv
 
 load_dotenv()
 
